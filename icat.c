@@ -330,6 +330,12 @@ av_prepare(struct av *av, const char *filename, bool keep_size, uint32_t userw, 
    width = (userw > 0 ? userw : width);
    height = (userh > 0 ? userh : height);
 
+   if (userw > 0 && userh == 0)
+      height = (int)(av->context->height * ((float)width / av->context->width));
+
+   if (userh > 0 && userw == 0)
+      width = (int)(av->context->width * ((float)height / av->context->height));
+
    if (!(av->sws = sws_getContext(av->context->width, av->context->height, av->context->pix_fmt, width, height, AV_PIX_FMT_RGB24, SWS_FAST_BILINEAR, NULL, NULL, NULL)))
       return false;
 
