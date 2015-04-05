@@ -420,7 +420,7 @@ int main(int argc, char *argv[])
    static int display_help = 0;
    uint32_t x = 0, y = 0, width = 0, height = 0;
    bool keep_size = false;
-   enum mode mode = MODE_INDEXED;
+   enum mode mode = MODE_BOTH;
 
    struct sigaction action;
    memset(&action, 0, sizeof(struct sigaction));
