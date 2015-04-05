@@ -6,13 +6,7 @@ such as gnome-terminal, konsole or rxvt-unicode (urxvt).
 Building
 --------
 
-Build requirements: icat depends on imlib2.
-
-On Ubuntu, `apt-get install libimlib2-dev`
-
-On Darwin (Mac OS X), `brew install imlib2`
-
-Note that for Darwin (Mac OS X), you will need to install [XQuartz](http://xquartz.macosforge.org/landing/) first, the version of the X.Org X Window System (X11) that runs on OS X.
+Build requirements: icat depends on ffmpeg (libavutil, etc...).
 
 To compile:
 
@@ -23,7 +17,7 @@ Running
 
 Run icat with a local file:
 
-	icat sample.png
+	icat foo.mkv
 
 or with multiple files:
 
