@@ -348,11 +348,11 @@ av_prepare(struct av *av, const char *filename, bool keep_size, uint32_t userw, 
    if (!(av->frame = av_frame_alloc()) || !(av->rgb = av_frame_alloc()))
       return false;
 
-   size_t rgb_bytes = avpicture_get_size(PIX_FMT_RGB24, width, height);
+   size_t rgb_bytes = avpicture_get_size(AV_PIX_FMT_RGB24, width, height);
    if (!(av->buffer = av_malloc(rgb_bytes)))
       return false;
 
-   if (avpicture_fill((AVPicture*)av->rgb, av->buffer, PIX_FMT_RGB24, width, height) < width * 3)
+   if (avpicture_fill((AVPicture*)av->rgb, av->buffer, AV_PIX_FMT_RGB24, width, height) < width * 3)
       return false;
 
    av->width = width;
